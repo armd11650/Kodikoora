@@ -1,206 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>    
-  <meta charset="UTF-8" />    
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />      <title>Kodikoora</title>     <style>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kodikoora</title>
+  <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: "Segoe UI", Arial, sans-serif;
       background-color: #ffffff;
+      color: #333;
     }
 
     header {
-      background-color: #f4f4f4;
+      background-color: #fff;
       display: flex;
       align-items: center;
       padding: 10px 20px;
-      border-bottom: 2px solid #ccc;
+      border-bottom: 2px solid #f47920;
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 80px;
       z-index: 1000;
+      justify-content: space-between;
     }
 
     .logo {
-      height: 50px;
-      margin-right: 20px;
+      height: 55px;
     }
 
-    marquee {
-      font-size: 20px;
+    .scroll-banner {
+      position: absolute;
+      bottom: -25px;
+      left: 0;
+      width: 100%;
+      background: #fef6f2;
+      border-top: 1px solid #f47920;
+      overflow: hidden;
+      white-space: nowrap;
       color: #f47920;
-      flex: 1;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 6px 0;
+    }
+
+    .scroll-banner span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll-left 15s linear infinite;
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
     }
 
     nav {
-      width: 15%;
-      padding: 20px 10px;
-      background-color: #ffffff;
-      height: 100vh;
-      position: fixed;
-      top: 80px;
-      left: 0;
-      border-right: 1px solid #ccc;
+      margin-left: auto;
     }
 
     nav a {
-      display: block;
-      margin: 15px 0;
+      display: inline-block;
       text-decoration: none;
       color: white;
       font-weight: bold;
       background: #f47920;
-      padding: 12px;
-      border-radius: 5px;
-      text-align: center;
+      padding: 10px 20px;
+      border-radius: 25px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #e3691c;
     }
 
     .container {
       display: flex;
-      margin-left: 15%;
-      padding-top: 100px;
+      justify-content: center;
+      padding: 120px 20px 40px;
     }
 
     .main-content {
-      width: 55%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 10px;
+      max-width: 700px;
+      text-align: center;
     }
 
     .main-content img {
       width: 100%;
       height: auto;
-      border-radius: 10px;
+      border-radius: 12px;
       border: 4px solid #f47920;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     }
 
     .curry-name {
-      margin-top: 10px;
+      margin-top: 15px;
       font-size: 22px;
       font-weight: bold;
-      color: #333;
-      text-align: center;
-    }
-
-    .right-panel {
-      width: 30%;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .block {
-      background-color: #f47920;
-      padding: 15px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      text-align: center;
-      position: relative;
-      font-size: 18px;
-      font-weight: bold;
-      color: white;
-      cursor: pointer;
-      width: 80%;
-      transition: background-color 0.3s ease;
-    }
-
-    .block:hover {
-      background-color: #e3691c;
-    }
-
-    .dropdown {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: white;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      margin-top: 5px;
-      z-index: 1000;
-      width: 100%;
-    }
-
-    .dropdown a {
-      display: block;
-      padding: 10px;
-      text-decoration: none;
-      color: #f47920;
-    }
-
-    .dropdown a:hover {
-      background-color: #f47920;
-      color: white;
-    }
-
-    .block:hover .dropdown {
-      display: block;
+      color: #444;
     }
 
     @media (max-width: 768px) {
-
-      header,
-      nav {
-        position: static;
-        width: 100%;
-        height: auto;
-      }
-
-      nav {
-        display: flex;
+      header {
         flex-direction: row;
-        justify-content: space-around;
-        border-right: none;
-        border-bottom: 1px solid #ccc;
+        height: auto;
+        padding: 10px;
       }
 
-      nav a {
-        margin: 10px;
-        flex: 1;
+      .logo {
+        height: 45px;
       }
 
       .container {
         flex-direction: column;
-        margin-left: 0;
-        padding-top: 0;
-      }
-
-      .main-content,
-      .right-panel {
-        width: 100%;
-      }
-
-      .main-content img {
-        width: 100%;
-        height: auto;
-        max-width: 100%;
-      }
-
-      .block {
-        width: 90%;
+        padding-top: 100px;
       }
     }
   </style>
 </head>
 
-<body>    <header>        <img src="https://raw.githubusercontent.com/armd11650/Kodikoora/refs/heads/main/logo.jpg" alt="Logo" class="logo" />        <marquee>Available Sundays Only - Limited Portions! Free home delivery (Poranki,Vijawayada)</marquee>    </header>
-      <nav>        <a href="#">Home</a>        <a href="#">About Us</a>    </nav>
-      <div class="container">        <div class="main-content">            <img src="https://raw.githubusercontent.com/armd11650/Kodikoora/refs/heads/main/phamplate.jpg" alt="Curry Image" />            <div class="curry-name"></div>        </div>
-            <div class="right-panel">           
-      <!-- Block 1 -->            <div class="block">                ₹300 (single portion)                <div class="dropdown">                    <a href="https://wa.me/message/HUEWPSV3LMV5O1" target="_blank">Order on Whatsapp</a>                    <a href="https://www.swiggy.com/menu/1103565?source=sharing" target="_blank">Order on Swiggy</a>                </div>            </div>
-                 
-      <!-- Block 2 -->            <div class="block">                ₹1500 (1kg portion,6-7 persons)                <div class="dropdown">                    <a href="https://wa.me/message/HUEWPSV3LMV5O1" target="_blank">Order on WhatsApp</a>                    <a href="https://www.swiggy.com/menu/1103565?source=sharing" target="_blank">Order on Swiggy</a>                </div>            </div>       
-    </div>    </div>
+<body>
+  <header>
+    <img src="https://raw.githubusercontent.com/armd11650/Kodikoora/refs/heads/main/logo.jpg" alt="Kodikoora Logo"
+      class="logo" />
+    <nav>
+      <a href="https://www.swiggy.com/menu/1103565?source=sharing" target="_blank">Order Now</a>
+    </nav>
+    <div class="scroll-banner">
+      <span>Available Sundays Only - Limited Portions! (Poranki, Vijayawada)</span>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="main-content">
+      <img src="https://raw.githubusercontent.com/armd11650/Kodikoora/refs/heads/main/phamplate.jpg"
+        alt="Delicious Kodikoora Chicken Curry" />
+      <div class="curry-name">Authentic Andhra Chicken Curry</div>
+    </div>
+  </div>
 </body>
 
 </html>
