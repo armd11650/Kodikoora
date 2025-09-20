@@ -7,15 +7,6 @@
   <title>Kodikoora</title>
   <meta name="description"
     content="Order Authentic Andhra Chicken Curry online in Vijayawada - Available Sundays only. Limited portions!" />
-
-  <!-- Open Graph for better sharing -->
-  <meta property="og:title" content="Kodikoora - Authentic Andhra Chicken Curry" />
-  <meta property="og:description"
-    content="Available Sundays Only - Limited Portions! Order online in Vijayawada." />
-  <meta property="og:image"
-    content="https://raw.githubusercontent.com/armd11650/Kodikoora/refs/heads/main/phamplate.jpg" />
-  <meta property="og:type" content="website" />
-
   <style>
     body {
       margin: 0;
@@ -27,6 +18,7 @@
     header {
       background-color: #fff;
       display: flex;
+      flex-direction: column;
       align-items: center;
       padding: 10px 20px;
       border-bottom: 2px solid #f47920;
@@ -34,19 +26,15 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 80px;
+      height: auto;
       z-index: 1000;
-      justify-content: flex-start;
     }
 
     .logo {
-      height: 55px;
+      height: 65px;
     }
 
     .scroll-banner {
-      position: absolute;
-      bottom: -25px;
-      left: 0;
       width: 100%;
       background: #fef6f2;
       border-top: 1px solid #f47920;
@@ -77,37 +65,21 @@
 
     .order-btn {
       display: block;
-      margin: 110px auto 20px;
-      margin-left: 40px; /* slight nudge to the right (~2 spaces) */
+      margin: 150px auto 20px; /* lowered spacing below banner */
       text-decoration: none;
       color: white;
       font-weight: bold;
       background: #f47920;
-      padding: 12px 25px;
-      border-radius: 30px;
-      font-size: 18px;
+      padding: 16px 35px; /* bigger button */
+      border-radius: 40px;
+      font-size: 22px;
       width: fit-content;
       transition: background-color 0.3s ease, transform 0.2s ease;
-      animation: pulse 2s infinite;
     }
 
     .order-btn:hover {
       background-color: #e3691c;
       transform: translateY(-2px);
-    }
-
-    @keyframes pulse {
-      0% {
-        box-shadow: 0 0 0 0 rgba(244, 121, 32, 0.6);
-      }
-
-      70% {
-        box-shadow: 0 0 0 15px rgba(244, 121, 32, 0);
-      }
-
-      100% {
-        box-shadow: 0 0 0 0 rgba(244, 121, 32, 0);
-      }
     }
 
     .container {
@@ -137,30 +109,14 @@
     }
 
     @media (max-width: 768px) {
-      header {
-        height: auto;
-        padding: 8px;
-      }
-
       .logo {
-        height: 45px;
+        height: 50px;
       }
 
       .order-btn {
-        margin: 100px auto 15px;
-        margin-left: 25px; /* lighter nudge for mobile */
-        font-size: 16px;
-        padding: 10px 20px;
-      }
-
-      .container {
-        padding-top: 10px;
-      }
-    }
-
-    @media (max-width: 400px) {
-      .scroll-banner {
-        font-size: 14px;
+        margin: 130px auto 15px; /* adjusted for mobile */
+        font-size: 18px;
+        padding: 12px 25px;
       }
     }
   </style>
@@ -171,18 +127,18 @@
     <img src="https://raw.githubusercontent.com/armd11650/Kodikoora/refs/heads/main/logo.jpg" alt="Kodikoora Logo"
       class="logo" />
     <div class="scroll-banner">
-      <span>Available Sundays Only - Limited Portions! (Poranki, Vijayawada)</span>
+      <span>Available Sundays Only - Limited Portions!</span>
     </div>
   </header>
 
-  <!-- Order Now button just below banner -->
-  <a href="https://www.swiggy.com/menu/1103565?source=sharing" target="_blank" class="order-btn">Order Now</a>
+  <!-- Order Now button centered below banner -->
+  <a href="https://www.swiggy.com/menu/1103565?source=sharing" target="_blank"
+    class="order-btn">Order Now</a>
 
   <div class="container">
     <div class="main-content">
-      <img src="https://raw.githubusercontent.com/armd11650/Kodikoora/refs/heads/main/phamplate.jpg"
+      <img src="https://raw.githubusercontent.com/armd11650/Kodikoora/refs/heads/main/center2.JPG"
         alt="Authentic Andhra Chicken Curry" />
-      <div class="curry-name">Authentic Andhra Chicken Curry</div>
     </div>
   </div>
 </body>
