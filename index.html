@@ -21,12 +21,11 @@
       flex-direction: column;
       align-items: center;
       padding: 10px 20px;
-      border-bottom: 2px solid #f47920;
+      border-bottom: 2px solid #f47920; /* orange line */
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      height: auto;
       z-index: 1000;
     }
 
@@ -37,18 +36,21 @@
     .scroll-banner {
       width: 100%;
       background: #fef6f2;
-      border-top: 1px solid #f47920;
+      border-top: 2px solid #f47920;
+      border-bottom: 2px solid #f47920;
       overflow: hidden;
       white-space: nowrap;
       color: #f47920;
       font-weight: bold;
       font-size: 16px;
-      padding: 6px 0;
+      padding: 10px 0;
       text-align: center;
+      box-sizing: border-box;
     }
 
     .scroll-banner span {
       display: inline-block;
+      width: 100%; /* full width scrolling */
       padding-left: 100%;
       animation: scroll-left 15s linear infinite;
     }
@@ -70,7 +72,7 @@
       color: white;
       font-weight: bold;
       background: #3BB143;
-      padding: 16px 35px; /* bigger button */
+      padding: 16px 35px;
       border-radius: 40px;
       font-size: 22px;
       width: fit-content;
@@ -78,7 +80,7 @@
     }
 
     .order-btn:hover {
-      background-color: #e3691c;
+      background-color: #4CBB17;
       transform: translateY(-2px);
     }
 
@@ -101,22 +103,20 @@
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     }
 
-    .curry-name {
-      margin-top: 15px;
-      font-size: 22px;
-      font-weight: bold;
-      color: #444;
-    }
-
     @media (max-width: 768px) {
       .logo {
         height: 50px;
       }
 
       .order-btn {
-        margin: 130px auto 15px; /* adjusted for mobile */
+        margin: 130px auto 15px;
         font-size: 18px;
         padding: 12px 25px;
+      }
+
+      .scroll-banner {
+        font-size: 14px;
+        padding: 8px 0;
       }
     }
   </style>
@@ -127,13 +127,13 @@
     <img src="https://raw.githubusercontent.com/armd11650/Kodikoora/refs/heads/main/logo.jpg" alt="Kodikoora Logo"
       class="logo" />
     <div class="scroll-banner">
-      <span>Available Sundays Only - Limited Portions!</span>
+      <span>Available Sundays Only - Limited Portions! (Poranki, Vijayawada)</span>
     </div>
   </header>
 
-  <!-- Order Now button centered below banner -->
+  <!-- Order Here button centered below banner -->
   <a href="https://www.swiggy.com/menu/1103565?source=sharing" target="_blank"
-    class="order-btn">Order Now</a>
+    class="order-btn">Order Here</a>
 
   <div class="container">
     <div class="main-content">
